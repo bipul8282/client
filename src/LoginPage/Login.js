@@ -7,8 +7,8 @@ import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [user, setUser] = useState(null);
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  const [email] = React.useState('');
+  const [password ] = React.useState('');
   let nevigate = useNavigate();
 
   useEffect(() => {
@@ -37,7 +37,7 @@ function Login() {
   return (
     <div className={style.main}>
       <div className={style.left}>
-        <img src='https://t4.ftcdn.net/jpg/01/22/71/95/360_F_122719584_A863mvJEcEAnqmGQ4ky6RbXEhsHKw95x.jpg'/>
+        <img src='https://t4.ftcdn.net/jpg/01/22/71/95/360_F_122719584_A863mvJEcEAnqmGQ4ky6RbXEhsHKw95x.jpg' alt='alt'/>
         <h1>Board</h1>
       </div>
       <div className={style.right}>
@@ -54,12 +54,15 @@ function Login() {
           <button  icon={<BsApple />} className={style.gbtn} >Sign in with Apple</button>
         </div>
         <div className={style.form}>
-          <h4>Email address</h4>
+          <h3>Email address</h3>
           <input type="email" placeholder="Email" className={style.input} value={user ? user.email : email} />
-          <h4>Password</h4>
+          <h3>Password</h3>
           <input type="password" placeholder="Password" className={style.input} value={user ? user.refreshToken : password} />
-          <h4>Forgot Password</h4>
-          <button text="Sign In" className={style.sbtn} onClick={() => handlesubmit()} />
+          <h3>Forgot Password</h3>
+          <button className={style.sbtn} onClick={() => handlesubmit()}>
+  { "Sign In" }
+</button>
+
 
         </div>
         
